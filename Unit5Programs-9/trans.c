@@ -1,6 +1,3 @@
-// Bank-account program reads a random-access file sequentially,
-// updates data already written to the file, creates new data to
-// be placed in the file, and deletes data previously in the file.
 #include <stdio.h>
 #include <stdlib.h>
 // clientData structure definition
@@ -30,7 +27,6 @@ int main(int argc, char *argv[]) {
     printf("%s: File could not be opened.\n", argv[0]);
     exit(-1);
   }
-
   // enable user to specify action
   while ((choice = enterChoice()) != 6) {
     switch (choice) {
@@ -132,8 +128,6 @@ void updateRecord(FILE *fPtr) {
   printf("%s", "Enter account to update ( 1 - 100 ): ");
   scanf("%d", &account);
   amt_update_transfer(fPtr,account,transaction,uptrec);
-
-  
 } // end function updateRecord
 // create and insert record
 void newRecord_and_delete(FILE *fPtr,int new) {
